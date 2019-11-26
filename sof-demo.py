@@ -13,5 +13,7 @@ with open('data/survey_results_public.csv') as f:
         elif line['Hobbyist'] == 'No':
             no_count += 1
 
-print(yes_count)
-print(no_count)
+total = yes_count + no_count
+
+print(yes_count / total)
+print(no_count /total)
