@@ -6,4 +6,3 @@ with open('data/survey_results_public.csv') as f:
 
     for line in csv_reader:
         print(line['Hobbyist'])
-        break
