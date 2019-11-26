@@ -15,5 +15,10 @@ with open('data/survey_results_public.csv') as f:
 
 total = yes_count + no_count
 
-print(yes_count / total)
-print(no_count /total)
+yes_pct = (yes_count / total) * 100
+yes_pct = round(yes_pct, 2)
+no_pct = (no_count / total) * 100
+no_pct = round(no_pct, 2)
+
+print(f'Yes: {yes_pct}%')
+print(f'No: {no_pct}%')
