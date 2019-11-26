@@ -1,10 +1,10 @@
 import csv
-from collections import defaultdict
+from collections import Counter
 
 with open('data/survey_results_public.csv') as f:
     csv_reader = csv.DictReader(f)
 
-    counts = defaultdict(int)
+    counts = Counter()
 
     for line in csv_reader:
         counts[line['Hobbyist']] += 1
