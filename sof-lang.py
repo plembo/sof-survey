@@ -7,7 +7,8 @@ with open('data/survey_results_public.csv') as f:
     counts = Counter()
 
     for line in csv_reader:
-        print(line['LanguageWorkedWith'])
+        languages = line['LanguageWorkedWith'].split(';')
+        print(languages)
         break
 
 #         counts[line['Hobbyist']] += 1
