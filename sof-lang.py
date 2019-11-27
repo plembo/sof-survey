@@ -4,14 +4,18 @@ from collections import Counter
 with open('data/survey_results_public.csv') as f:
     csv_reader = csv.DictReader(f)
 
-    counts = Counter()
+    language_counter = Counter()
 
     for line in csv_reader:
         languages = line['LanguageWorkedWith'].split(';')
-        print(languages)
+
+        for language in languages:
+            language_counter[language] += 1
+
+        print(language_counter)
         break
 
-#         counts[line['Hobbyist']] += 1
+#       counts[line['Hobbyist']] += 1
 
 # total = counts['Yes'] + counts['No']
 
