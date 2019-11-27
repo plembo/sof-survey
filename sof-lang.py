@@ -11,7 +11,7 @@ with open('data/survey_results_public.csv') as f:
 
         language_counter.update(languages)
 
-print(language_counter)
+print(language_counter.most_common(5))
 
 #       counts[line['Hobbyist']] += 1
 
