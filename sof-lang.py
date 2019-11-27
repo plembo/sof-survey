@@ -3,6 +3,7 @@ from collections import Counter
 
 with open('data/survey_results_public.csv') as f:
     csv_reader = csv.DictReader(f)
+    total = 0
 
     language_counter = Counter()
 
@@ -11,16 +12,10 @@ with open('data/survey_results_public.csv') as f:
 
         language_counter.update(languages)
 
-print(language_counter.most_common(5))
+        total += 1
 
-#       counts[line['Hobbyist']] += 1
+for language, value in language_counter.most_common(5):
+    language_pct = (value / total) * 100
+    language_pct = round(language_pct, 2)
 
-# total = counts['Yes'] + counts['No']
-
-# yes_pct = (counts['Yes'] / total) * 100
-# yes_pct = round(yes_pct, 2)
-# no_pct = (counts['No'] / total) * 100
-# no_pct = round(no_pct, 2)
-
-# print(f'Yes: {yes_pct}%')
-# print(f'No: {no_pct}%')
+    print(f'{language}: {language_pct}%')
