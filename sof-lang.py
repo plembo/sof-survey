@@ -9,8 +9,7 @@ with open('data/survey_results_public.csv') as f:
     for line in csv_reader:
         languages = line['LanguageWorkedWith'].split(';')
 
-        for language in languages:
-            language_counter[language] += 1
+        language_counter.update(languages)
 
         print(language_counter)
         break
