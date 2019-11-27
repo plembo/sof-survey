@@ -11,8 +11,7 @@ with open('data/survey_results_public.csv') as f:
 
         language_counter.update(languages)
 
-        print(language_counter)
-        break
+print(language_counter)
 
 #       counts[line['Hobbyist']] += 1
 
